@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+{%block title%}
+{{trener.name}} {{trener.surname}}
+{%endblock%}
+
+
+{% block content %}
+{%include "include/main_menu.html"%}
+<H2>{{trener.name}} {{trener.surname}}</H2>
+<p>{{trener.age}}</p>
+<p>{{trener.special}}</p>
+<img src="{{trener.url_image}}" width="700" height="270" alt="">
+<p>{{trener.description}}</p>
+{% endblock %}~

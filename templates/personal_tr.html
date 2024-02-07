@@ -1,0 +1,17 @@
+{%extends "base.html"%} 
+
+{%block title%} Goldenfitnes.ru {%endblock%} 
+
+{%block content%} 
+
+{% include "include/main_menu.html" %}
+
+<H1>Записаться на персональную тренеровку:</H1>
+
+{% for personal_trening in personal_trenings%}
+<p>{{personal_trening.tipe}} {{personal_trening.datetime}}</p>
+
+{%endfor%}
+
+{%endblock%} 
+

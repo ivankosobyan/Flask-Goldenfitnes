@@ -1,0 +1,16 @@
+{%extends "base.html"%} 
+
+{%block title%} Goldenfitnes.ru {%endblock%} 
+
+{%block content%}
+{% include "include/main_menu.html" %}
+<H1>Записаться к тренеру:</H1> 
+
+{% for trener in treners %} 
+<p><a href="{{url_for('trener_personal',trener_id=trener.id)}}">{{ trener.name }} {{ trener.surname }}</a> {{trener.special}} {{trener.age}}</p>
+
+{% endfor %}
+
+{%endblock%} 
+
+
