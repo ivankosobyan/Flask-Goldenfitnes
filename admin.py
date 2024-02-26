@@ -12,18 +12,19 @@ class TrenerModelView(ModelView):
     form_excluded_columns = ["created_at","updated_at"]
 
 class PersonalTreninModelView(ModelView):
-    column_labels=dict(tipe="Направленность",created_at="Создано в",updated_at="Данные обновлялись",datetime="Расписание")
+    column_labels=dict(tipe="Направленность",created_at="Создано в",updated_at="Данные обновлялись",datetime="Расписание",trener="Тренер")
     form_excluded_columns =["created_at","updated_at"]
     column_editable_list = ["tipe","datetime"]
-
+    column_list = ["tipe","trener","datetime"]
     
 class GroupTreningModelView(ModelView):
-    column_labels=dict(trener="Тренер",datetime="Расписание",trening="Тип занятия",created_at="Создано в",updated_at="Данные обновлялись")
+    column_labels=dict(treners="Тренер",datetime="Расписание",trening="Тип занятия",created_at="Создано в",updated_at="Данные обновлялись")
     form_excluded_columns=["created_at","updated_at"]
-    
+    column_list = ["treners","datetime","trening","created_at","updated_at"]
 
 admin.add_view(TrenerModelView(Trener, db.session))
 admin.add_view(GroupTreningModelView(GroupTrening,db.session))
 admin.add_view(PersonalTreninModelView(PersonalTrening,db.session))
+#admin.add_view(User)
 
 

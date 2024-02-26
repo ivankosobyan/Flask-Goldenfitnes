@@ -12,4 +12,9 @@
 <p>{{trener.special}}</p>
 <img src="{{trener.url_image}}" width="700" height="270" alt="">
 <p>{{trener.description}}</p>
-{% endblock %}~
+
+{% for personal_trening in personal_trenings %}
+<p>{{personal_trening.tipe}} {{personal_trening.datetime}}</p>
+{% endfor %}
+
+{% endblock %}

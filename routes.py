@@ -21,10 +21,14 @@ def trening():
 @app.route("/personal_tr")
 def personal_tr():
       personal_trenings = PersonalTrening.query.all()
-
       return render_template("personal_tr.html",personal_trenings=personal_trenings)
 
 @app.route("/trener_personal/<int:trener_id>")
 def trener_personal(trener_id):
     trener = Trener.query.get(trener_id)
-    return render_template("trener_personal.html", trener=trener)
+    personal_trenings = PersonalTrening.query.filter_by(trener_id=trener_id)
+    return render_template("trener_personal.html", trener=trener,personal_trenings=personal_trenings)
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
