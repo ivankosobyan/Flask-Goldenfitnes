@@ -1,7 +1,7 @@
 {%extends "base.html"%}
 
 {%block title%}
-Вод в акаунт
+Вход в акаунт
 {%endblock%}
 
 
@@ -10,8 +10,9 @@
 <h1>вход</h1>
 
 <form action="#" method="post">
-    <input type="text" name="email" placeholder="введите почту">
-    <input type="password" name="password" placeholder="введите пароль">
+    {{form.csrf_token}}
+    {{form.email(placeholder="введите почту")}}
+    {{form.password(placeholder="введите пароль")}}
     <input type="submit" value="ВХОД" >
 
 </form>
