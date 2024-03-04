@@ -9,11 +9,12 @@
 {%block content%}
 <h1>вход</h1>
 
-<form action="#" method="post">
+<form action="" method="post">
     {{form.csrf_token}}
     {{form.email(placeholder="введите почту")}}
     {{form.password(placeholder="введите пароль")}}
-    <input type="submit" value="ВХОД" >
+    <button type = "submit">ВХОД</button>
+    <p>{{message}}</p>
 
 </form>
 

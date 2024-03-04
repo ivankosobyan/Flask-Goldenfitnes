@@ -6,10 +6,16 @@
         <ul>
             <li><a href="{{ url_for('index') }}">Главная</a></li>
             <li><a href="{{ url_for('trener') }}">Тренеры</a></li>
-            <li><a href="{{ url_for('trening') }}">Тренировки</a></li>
+            <li><a href="{{ url_for('trening') }}">Тренировки</a></li>            
+            
+            {%if  current_user.is_authenticated%}
+            <li><a href="{{url_for('lms')}}">Личный кабинет</a></li>
             <li><a href="{{ url_for('personal_tr')}}">Персональные тренировки</a></li>
+            <li><a href="{{url_for('logout')}}">Выйти изсистемы</a></li>
+            {%else%}
             <li><a href="{{url_for('login')}}">Войти в акаунт</a></li>
             <li><a href="{{url_for('register')}}">Регистрация</a></li>
+            {%endif%}
         </ul>
     </nav>
 </header>
